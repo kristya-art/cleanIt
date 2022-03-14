@@ -1,4 +1,4 @@
-package org.cleaningstore.cleaningstore;
+package org.cleaningstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

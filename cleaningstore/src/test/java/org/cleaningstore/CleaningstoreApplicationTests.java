@@ -1,4 +1,4 @@
-package org.cleaningstore.cleaningstore;
+package org.cleaningstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

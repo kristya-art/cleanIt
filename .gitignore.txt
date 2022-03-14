@@ -1,0 +1,125 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@kristya-art 
+kristya-art
+/
+beautyAcademy
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+beautyAcademy/.gitignore
+@beo1
+beo1 new .gitignore
+Latest commit 262af33 on Dec 5, 2019
+ History
+ 2 contributors
+@beo1@kristya-art
+82 lines (69 sloc)  749 Bytes
+   
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip are provided as solutions
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Latex
+#######
+
+*.aux
+*.class
+*.bbl
+*.blg
+*.glo
+*.lot
+*.ist
+*.idx
+*.lof
+*.out
+*.snm
+*.toc
+*.nav
+*.vrb
+*.bcf
+*.synctex.gz
+auto
+stale_outputs_checked
+_region_.tex
+*run.xml
+
+# IntelliJ
+##########
+
+*.iml
+.idea
+
+# Maven
+#######
+
+target
+
+# Other
+#######
+
+*.bak
+*.backup
+*~
+**/auto
+
+
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
