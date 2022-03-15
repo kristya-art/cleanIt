@@ -35,6 +35,7 @@ public class Customer {
 //	@Email
 	@Column(name = "email", nullable = false, unique = true)
 	private String email;
+//
 //	@NotNull
 //	@Size(min = 5)
 	@Column(name = "password", nullable = false)
