@@ -4,10 +4,7 @@ import org.cleaningstore.order.model.Order;
 import org.cleaningstore.order.model.OrderStatus;
 import org.cleaningstore.order.service.OrderNotFoundException;
 import org.cleaningstore.order.service.OrderService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,6 +26,12 @@ public class OrderController {
     @GetMapping("{id}")
     public Order findOrder(@PathVariable long id)throws OrderNotFoundException{
         return orderService.findOrder(id);
+    }
+
+    @PutMapping("{id}")
+    public void updateOrder(@PathVariable long id,@RequestBody Order order)
+    throws OrderNotFoundException{
+        orderService.updateOrder(order.getId());
     }
 
 }
