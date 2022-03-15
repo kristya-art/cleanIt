@@ -1,12 +1,14 @@
-package org.cleaningstore.catalog.model;
+package org.cleaningstore.order.model;
 
+import org.cleaningstore.catalog.model.Material;
 
-import javax.annotation.processing.Generated;
-import javax.persistence.*;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 
-@MappedSuperclass
-public class Product {
+@Embeddable
+public class ProductInfo {
 
     private String title;
 
@@ -15,15 +17,15 @@ public class Product {
 
     private BigDecimal price;
 
-    private String imageUrl;
 
-    public Product(String title, Material material, BigDecimal price) {
+
+    public ProductInfo(String title, Material material, BigDecimal price) {
         this.title = title;
         this.material = material;
         this.price = price;
 
     }
-    public Product(){}
+    public ProductInfo(){}
 
     public String getTitle() {
         return title;

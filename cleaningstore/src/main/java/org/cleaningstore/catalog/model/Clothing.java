@@ -11,24 +11,16 @@ public class Clothing extends Product{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private ClothingType type;
 
-    public Clothing(Material material, BigDecimal price, ClothingType type) {
-        super(material, price);
-        this.type = type;
+
+    public Clothing(String title, Material material, BigDecimal price) {
+        super(title,material, price);
+
     }
 
     public Clothing() {
-
     }
 
-    public ClothingType getType() {
-        return type;
-    }
-
-    public void setType(ClothingType type) {
-        this.type = type;
-    }
 
     public void setId(Long id) {
         this.id = id;
