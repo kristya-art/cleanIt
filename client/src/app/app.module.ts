@@ -5,6 +5,13 @@ import { AppComponent } from './app.component';
 import { OrdersComponent } from './orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -15,7 +22,19 @@ import {MatSliderModule} from "@angular/material/slider";
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+
+  ],
+  exports:[
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
