@@ -8,15 +8,19 @@ import {Order} from "../order";
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-
+  columnToDisplay = ['id','date','status']
   order:any;
   orders:any;
+
+  items:any;
+
 
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.orderService.getAll().subscribe(data=>{
       this.orders=data;
+
     })
   }
 

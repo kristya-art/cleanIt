@@ -1,0 +1,63 @@
+<!--<div *ngIf="order">-->
+
+<!--  <h2>{{order.id | uppercase}} Details</h2>-->
+<!--  <div><span>id: </span>{{order.id}}</div>-->
+<!--  <div>-->
+<!--    <label for="order-status">Order status: </label>-->
+<!--    <input id="order-status" [(ngModel)]="order.status" placeholder="status">-->
+<!--  </div>-->
+
+<!--</div>-->
+
+<mat-card>
+  <form #orderForm="ngForm" (ngSubmit)="save(orderForm.value)">
+    <mat-card-title>{{order.id ? 'Edit' : 'Add'}}</mat-card-title>
+
+    <mat-card-content>
+      <input type = "hidden" name="href" [(ngModel)]="order.href">
+      <mat-form-field>
+        <input matInput placeholder="order date"  [(ngModel)]="order.date"
+               required name="date" #date>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="order amount"  [(ngModel)]="order.amount"
+               required name="amount" #amount>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput placeholder="order status"  [(ngModel)]="order.status"
+               required name="status" #status>
+      </mat-form-field>
+<!--      <mat-form-field>-->
+<!--        <textarea matInput placeholder="course description" [(ngModel)]="order.description"-->
+<!--                  required name="description" #description></textarea>-->
+<!--      </mat-form-field>-->
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              *ngIf="!order.id"    [disabled]="!orderForm.valid">Save</button>
+
+
+
+      <button mat-raised-button color="primary" (click)="update(order,order.id)"
+              *ngIf="order.id" [disabled]="!orderForm.valid" type="button">Update</button>
+
+      <button mat-raised-button color="secondary" (click)="remove(order.id)"
+              *ngIf="order.id" type="button">Delete</button>
+
+      <!--<button mat-raised-button color="secondary" (click)="remove(mycourse.href)"-->
+      <!--*ngIf="mycourse.href" type="button">Delete</button>-->
+      <!--<button mat-raised-button color="secondary" (click)="remove(mycourse.id)"-->
+      <!--type="button">Delete</button>-->
+
+      <a mat-button routerLink="/order-list">Cancel</a>
+    </mat-card-actions>
+    <mat-card-footer>
+
+    </mat-card-footer>
+  </form>
+
+</mat-card>

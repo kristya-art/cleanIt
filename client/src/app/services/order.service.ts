@@ -17,6 +17,11 @@ export class OrderService {
     return this.http.get(this.orderUrl,{responseType: 'json'});
   }
 
+  get(id: string | null) {
+    return this.http.get(this.orderUrl+'/'+ id);
+  }
+
+
   // getOrderById(id){
   //   return this.http.get(this.orderUrl+id);
   // }

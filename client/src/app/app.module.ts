@@ -13,11 +13,16 @@ import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { OrderListComponent } from './order-list/order-list.component';
+import {RouterModule} from "@angular/router";
+import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderListComponent
+    OrderListComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,9 @@ import { OrderListComponent } from './order-list/order-list.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonToggleModule,
+    RouterModule,
+    AppRoutingModule,
+    MatTableModule,
 
   ],
   exports:[
