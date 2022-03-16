@@ -1,0 +1,1 @@
+{{date  | date:'yyyy-MM-dd'}} // convert data into 'yyyy-MM-dd'

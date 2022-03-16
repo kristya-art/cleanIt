@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from "@angular/forms";
 import { AppComponent } from './app.component';
-import { OrdersComponent } from './orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
 import { HttpClientModule } from '@angular/common/http';
@@ -12,11 +11,13 @@ import {MatListModule} from "@angular/material/list";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrdersComponent
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,11 +31,13 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonToggleModule,
 
   ],
   exports:[
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
