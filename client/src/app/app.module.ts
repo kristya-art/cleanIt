@@ -17,35 +17,44 @@ import {RouterModule} from "@angular/router";
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MatTableModule} from "@angular/material/table";
-
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { CustomerListComponent } from './customer-list/customer-list.component'
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    CustomerListComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    RouterModule,
-    AppRoutingModule,
-    MatTableModule,
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonToggleModule,
+        RouterModule,
+        AppRoutingModule,
+        MatTableModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatPaginatorModule
 
-  ],
+
+    ],
   exports:[
     MatFormFieldModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

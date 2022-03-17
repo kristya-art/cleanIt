@@ -9,4 +9,12 @@
     flex: 0 0 10%;
   }
 
+  table {
+    width: 100%;
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
 

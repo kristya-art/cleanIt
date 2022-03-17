@@ -1,13 +1,18 @@
+import {OrderItem} from "./orderItem";
+import {Customer} from "./customer";
+
 export class Order{
   constructor(
     id : number,
     date: Date,
     amount : number,
     status : string,
-   // customer : Customer,
+    notes: string,
+  //  customer : any,
    // address: Address,
     //creditCard: CreditCard,
-    items : []
+    // items : [] | OrderItem
+    items:{}
 ){}
 
 }

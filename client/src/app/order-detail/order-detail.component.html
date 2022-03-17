@@ -9,15 +9,23 @@
 
 <!--</div>-->
 
+
 <mat-card>
   <form #orderForm="ngForm" (ngSubmit)="save(orderForm.value)">
     <mat-card-title>{{order.id ? 'Edit' : 'Add'}}</mat-card-title>
 
     <mat-card-content>
       <input type = "hidden" name="href" [(ngModel)]="order.href">
-      <mat-form-field>
-        <input matInput placeholder="order date"  [(ngModel)]="order.date"
-               required name="date" #date>
+<!--      <mat-form-field>-->
+<!--        <input matInput placeholder="order date"  [(ngModel)]="order.date"-->
+<!--               required name="date" #date>-->
+<!--      </mat-form-field>-->
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="order.date"
+        retquired name="date" #date>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="order amount"  [(ngModel)]="order.amount"
@@ -28,6 +36,16 @@
       <mat-form-field>
         <input matInput placeholder="order status"  [(ngModel)]="order.status"
                required name="status" #status>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="customer"  [(ngModel)]="order.customer.id"
+               required name="customer" #customer>
+
+      </mat-form-field>
+      <mat-form-field>
+        <button mat-raised-button color="secondary" (click)="remove(order.id)"
+                *ngIf="order.id" type="button">Send email</button>
       </mat-form-field>
 <!--      <mat-form-field>-->
 <!--        <textarea matInput placeholder="course description" [(ngModel)]="order.description"-->
@@ -48,10 +66,10 @@
       <button mat-raised-button color="secondary" (click)="remove(order.id)"
               *ngIf="order.id" type="button">Delete</button>
 
-      <!--<button mat-raised-button color="secondary" (click)="remove(mycourse.href)"-->
-      <!--*ngIf="mycourse.href" type="button">Delete</button>-->
-      <!--<button mat-raised-button color="secondary" (click)="remove(mycourse.id)"-->
-      <!--type="button">Delete</button>-->
+<!--      <button mat-raised-button color="secondary" (click)="remove(order.href)"-->
+<!--      *ngIf="order.href" type="button">Delete</button>-->
+<!--      <button mat-raised-button color="secondary" (click)="remove(order.id)"-->
+<!--      type="button">Delete</button>-->
 
       <a mat-button routerLink="/order-list">Cancel</a>
     </mat-card-actions>

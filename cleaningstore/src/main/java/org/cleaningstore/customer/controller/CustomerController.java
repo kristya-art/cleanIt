@@ -7,6 +7,7 @@ import org.cleaningstore.customer.service.CustomerService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 
 @RestController
@@ -26,6 +27,11 @@ public class CustomerController {
     @GetMapping()
     public Customer findCustomer(@RequestParam @NotNull String email) throws CustomerNotFoundException {
         return  customerService.findCustomer(email);
+    }
+
+    @GetMapping
+    public List<Customer> findAllCustomers(){
+        return customerService.findAllCustomers();
     }
 
 

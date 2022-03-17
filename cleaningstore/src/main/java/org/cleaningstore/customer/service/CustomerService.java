@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class CustomerService {
@@ -30,5 +32,9 @@ public class CustomerService {
     public Customer findCustomer(String email) throws CustomerNotFoundException{
         Customer customer = customerRepository.findByEmail(email).orElseThrow(CustomerNotFoundException::new);
         return customer;
+    }
+
+    public List<Customer> findAllCustomers(){
+        return customerRepository.findAll();
     }
 }
