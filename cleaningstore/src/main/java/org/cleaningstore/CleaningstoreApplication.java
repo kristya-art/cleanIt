@@ -1,13 +1,25 @@
 package org.cleaningstore;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 
 @SpringBootApplication
 public class CleaningstoreApplication {
 
+	@Autowired
+	private EmailSenderService service;
+
 	public static void main(String[] args) {
-		SpringApplication.run(CleaningstoreApplication.class, args);
+		SpringApplication.run(CleaningstoreApplication.class, args);}
+
+		@EventListener(ApplicationReadyEvent.class)
+		public void triggerMail(){
+		 service.sendSimpleEmail("shiriagina@yahoo.com",
+				 "mail body...","this is the subject.");
+		}
 	}
 
-}
+

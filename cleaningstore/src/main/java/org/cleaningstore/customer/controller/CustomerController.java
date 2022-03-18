@@ -29,10 +29,10 @@ public class CustomerController {
         return  customerService.findCustomer(email);
     }
 
-    @GetMapping
-    public List<Customer> findAllCustomers(){
-        return customerService.findAllCustomers();
-    }
+//    @GetMapping
+//    public List<Customer> findAllCustomers(){
+//        return customerService.findAllCustomers();
+//    }
 
 
 }
