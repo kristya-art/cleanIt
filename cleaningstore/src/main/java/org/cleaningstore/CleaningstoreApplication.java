@@ -15,11 +15,11 @@ public class CleaningstoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CleaningstoreApplication.class, args);}
 
-		@EventListener(ApplicationReadyEvent.class)
-		public void triggerMail(){
-		 service.sendSimpleEmail("shiriagina@yahoo.com",
-				 "mail body...","this is the subject.");
-		}
+//		@EventListener(ApplicationReadyEvent.class)
+//		public void triggerMail(){
+//		 service.sendSimpleEmail("shiriagina@yahoo.com",
+//				 "mail body...","this is the subject.");
+//		}
 	}
 
 

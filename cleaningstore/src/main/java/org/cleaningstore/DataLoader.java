@@ -1,6 +1,7 @@
 package org.cleaningstore;
 
 import org.cleaningstore.catalog.model.Material;
+import org.cleaningstore.customer.controller.CustomerController;
 import org.cleaningstore.customer.model.Address;
 import org.cleaningstore.customer.model.CreditCard;
 import org.cleaningstore.customer.model.CreditCardType;
@@ -22,16 +23,17 @@ import java.util.List;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-   // OrderRepository orderRepository;
-
-  //  OrderService orderService;
 
     CustomerRepository customerRepository;
     OrderService orderService;
+    CustomerController customerController;
 
-    public DataLoader(CustomerRepository customerRepository, OrderService orderService) {
+    public DataLoader(CustomerRepository customerRepository, OrderService orderService,
+    CustomerController customerController) {
         this.customerRepository = customerRepository;
         this.orderService = orderService;
+        this.customerController = customerController;
+
     }
 
     @Override
@@ -40,9 +42,9 @@ public class DataLoader implements ApplicationRunner {
 
         // create customers
         Customer customer1 = new Customer("Alic", "Bon","alic@gmx.com","alicb^^^^",new Address("Mainstreet 45","Zuchwil","SO","4528","Schweiz"),new CreditCard(CreditCardType.VISA,"1234 5678 9123 4567" ,06,2023));
-        Customer customer2 = new Customer("Benni", "Bellini","benni@gmx.com","bebe^^^^",new Address("Cherrystreet 5","Bern","BE","3019","Schweiz"),new CreditCard(CreditCardType.VISA,"1234 8976 8934 3487",03,2023));
+        Customer customer2 = new Customer("Benni", "Bellini","shiriagina@yahoo.com","bebe^^^^",new Address("Cherrystreet 5","Bern","BE","3019","Schweiz"),new CreditCard(CreditCardType.VISA,"1234 8976 8934 3487",03,2023));
         Customer customer3 = new Customer("Zamira", "Karimi","zaka@gmx.com","zaka^^^^",new Address("Mangostreet 1","Biel","BE","2500","Schweiz"),new CreditCard(CreditCardType.MASTERCARD,"9836 3635 5324 2837",05,2025));
-        Customer customer4 = new Customer("Alessandro", "Pinelli","shiriagina@yahoo.com","alpi^^^",new Address("Pineapplestreet 13","Zurich","ZU","8000","Schweiz"),new CreditCard(CreditCardType.VISA,"2963 7437 3737 9538",01,2024));
+        Customer customer4 = new Customer("Alessandro", "Pinelli","pinelli@yahoo.com","alpi^^^",new Address("Pineapplestreet 13","Zurich","ZU","8000","Schweiz"),new CreditCard(CreditCardType.VISA,"2963 7437 3737 9538",01,2024));
 
             ArrayList<Customer> list = new ArrayList<>();
 			list.add(customer1);
@@ -71,6 +73,8 @@ public class DataLoader implements ApplicationRunner {
         Order order1 = orderService.placeOrder(customer1.getId(),orderItems12);
 
         Order order2 = orderService.placeOrder(customer2.getId(),orderItems34);
+
+      //   customerController.sendEmail(customer2.getId());
 
      //   Order order = new Order(orderItems,OrderStatus.ACCEPTED,new BigDecimal(89.0),new Date(),customer1);
 

@@ -2,6 +2,6 @@ package org.cleaningstore.order.model;
 
 public enum OrderStatus {
 
-    ACCEPTED, PROCESSING, DONE, SHIPPED
+    ACCEPTED, PROCESSING, READY,DONE
     // could also put wash, dry, ion
 }

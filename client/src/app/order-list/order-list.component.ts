@@ -14,7 +14,7 @@ import {CustomerService} from "../services/customer.service";
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  columnToDisplay = ['id','date','status','action','notes']
+  columnToDisplay = ['id','date','status','customerId','customer','action','notes',]
 
   // displayedColumns = ['id','date','status','action']
   // dataSource = new MatTableDataSource();

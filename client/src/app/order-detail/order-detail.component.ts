@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Observable, Subscription} from "rxjs";
 import {Order} from "../order";
 import {NgForm} from "@angular/forms";
+import {CustomerService} from "../services/customer.service";
 
 @Component({
   selector: 'app-order-detail',
@@ -17,9 +18,12 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
 
   sub: Subscription | any;
 
+  customer: any;
+
   constructor(private orderService: OrderService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private customerService: CustomerService) {
   }
 
   // ngOnInit(): void {
@@ -44,6 +48,7 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
         )
       }
     })
+
   }
 
 
@@ -55,6 +60,7 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
 
   reloadData() {
     this.orders = this.orderService.getAll();
+
   }
 
   ngOnDestroy(): void {
@@ -74,5 +80,9 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
     //     this.gotoList();
     //   },error => console.error(error));
     // }
+  }
+
+  sendEmail(id:any){
+    this.customerService.sendEmail(id);
   }
 }

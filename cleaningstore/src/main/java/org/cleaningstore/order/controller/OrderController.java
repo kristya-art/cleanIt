@@ -1,5 +1,6 @@
 package org.cleaningstore.order.controller;
 
+import org.cleaningstore.EmailSenderService;
 import org.cleaningstore.order.model.Order;
 import org.cleaningstore.order.model.OrderStatus;
 import org.cleaningstore.order.service.OrderNotFoundException;
@@ -15,8 +16,10 @@ public class OrderController {
 
    private OrderService orderService;
 
+
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
+
     }
 
     @GetMapping
@@ -34,5 +37,7 @@ public class OrderController {
     throws OrderNotFoundException{
         orderService.updateOrder(order.getId());
     }
+
+
 
 }
