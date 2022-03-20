@@ -21,6 +21,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
         MatTableModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatIconModule
 
 
     ],

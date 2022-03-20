@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {OrderService} from "../services/order.service";
 import {Order} from "../order";
 import {Router} from "@angular/router";
@@ -6,6 +6,7 @@ import {OrderItem} from "../orderItem";
 import {Customer} from "../customer";
 import {MatTableDataSource} from "@angular/material/table";
 import {CustomerService} from "../services/customer.service";
+import {ProductInfo} from "../productInfo";
 
 
 @Component({
@@ -13,8 +14,10 @@ import {CustomerService} from "../services/customer.service";
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.css']
 })
+
+
 export class OrderListComponent implements OnInit {
-  columnToDisplay = ['id','date','status','customerId','customer','action','notes',]
+  columnToDisplay = ['id','date','status','customerId','customerName','description','action','notes']
 
   // displayedColumns = ['id','date','status','action']
   // dataSource = new MatTableDataSource();
@@ -22,6 +25,8 @@ export class OrderListComponent implements OnInit {
   order:any;
   orders:any;
   item: any;
+  product: ProductInfo | any;
+
 
   items : {} | any;
   customer : Customer | any;
@@ -37,6 +42,7 @@ export class OrderListComponent implements OnInit {
     this.orderService.getAll().subscribe(data=>{
       this.orders=data;
       this.customers = this.customerService.getAll();
+
 
    //  this.dataSource.paginator = this.paginator;
      // this.dataSource=data;
@@ -61,6 +67,9 @@ export class OrderListComponent implements OnInit {
     this.orders.filter = filterValue.trim().toLowerCase();
   }
 
+  done(id:any){
+
+  }
   // a
   // applyFilter(filterValue: string) {
   //   filterValue = filterValue.trim(); // Remove whitespace
