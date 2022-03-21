@@ -12,6 +12,9 @@
   table {
     width: 100%;
   }
+  .mat-list{
+    padding: 10px;
+  }
 
   th.mat-sort-header-sorted {
     color: black;
@@ -23,13 +26,17 @@
 
   .mat-column-description {
     /*width: 64px;*/
+    flex: 9em;
+    min-width: 9em;
     /*border-right: 1px solid currentColor;*/
     padding-right: 24px;
     text-align: center;
   }
 
   .mat-column-id {
-    width: 8px;
+    flex: 9em;
+    min-width: 0.5em;
+    /*width: 8px;*/
     border-right: 1px solid currentColor;
     padding-right: 24px;
     text-align: center;
@@ -43,6 +50,13 @@
   }
   .mat-column-customerName {
     /*width: 8px;*/
+    padding-right: 24px;
+    text-align: center;
+  }
+
+  .mat-column-action{
+    flex: 9em;
+    min-width: 0.5em;
     padding-right: 24px;
     text-align: center;
   }

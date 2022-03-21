@@ -17,7 +17,7 @@ import {ProductInfo} from "../productInfo";
 
 
 export class OrderListComponent implements OnInit {
-  columnToDisplay = ['id','date','status','customerId','customerName','description','action','notes']
+  columnToDisplay : string[] = ['id','date','customerId','customerName','description','status','action','notes']
 
   // displayedColumns = ['id','date','status','action']
   // dataSource = new MatTableDataSource();
@@ -77,5 +77,6 @@ export class OrderListComponent implements OnInit {
   //
   //   this.orders.filter = filterValue;
   // }
+
 
 }
