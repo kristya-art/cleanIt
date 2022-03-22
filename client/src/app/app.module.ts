@@ -22,6 +22,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import {MatIconModule} from "@angular/material/icon";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatIconModule} from "@angular/material/icon";
         MatDatepickerModule,
         MatNativeDateModule,
         MatPaginatorModule,
-        MatIconModule
+        MatIconModule,
+        MatGridListModule
 
 
     ],

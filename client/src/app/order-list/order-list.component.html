@@ -28,9 +28,9 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
 </mat-form-field>
 
-<mat-toolbar>
-  <span></span>
-</mat-toolbar>
+<!--<mat-toolbar>-->
+<!--  <span></span>-->
+<!--</mat-toolbar>-->
 <table mat-table [dataSource]="orders" class="mat-elevation-z8 demo-table">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
@@ -75,6 +75,10 @@
   <ng-container matColumnDef="notes">
     <th mat-header-cell *matHeaderCellDef> Notes </th>
     <td mat-cell *matCellDef="let order"> {{order.notes }} </td>
+<!--    <mat-form-field appearance="fill">-->
+<!--      <mat-label>Textarea</mat-label>-->
+<!--      <textarea matInput></textarea>-->
+<!--    </mat-form-field>-->
   </ng-container>
 
 

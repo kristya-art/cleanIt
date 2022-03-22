@@ -20,17 +20,15 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
 
   customer: any;
 
+
+
   constructor(private orderService: OrderService,
               private router: Router,
               private route: ActivatedRoute,
               private customerService: CustomerService) {
   }
 
-  // ngOnInit(): void {
-  //
-  //  const orderId = this.route.snapshot.paramMap.get('id');
-  //  this.order = this.orderService.get(orderId);
-  // }
+
   ngOnInit(): void {
     this.sub = this.route.params.subscribe(params => {
       const id = params['id'];

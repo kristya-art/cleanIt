@@ -7,3 +7,20 @@
 .orderDetail-full-width {
   width: 100%;
 }
+
+.mat-form-field{
+
+}
+
+.mat-label{
+  color:red;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.h4 .matLine{
+  padding-left: 24px;
+  padding-right: 24px;
+}
