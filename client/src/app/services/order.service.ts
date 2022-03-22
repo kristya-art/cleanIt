@@ -21,6 +21,10 @@ export class OrderService {
     return this.http.get(this.orderUrl+'/'+ id);
   }
 
+  update(order:Order) : Observable<Order> {
+    return this.http.put<Order>(this.orderUrl+'/'+order.id, order);
+  }
+
 
   // getOrderById(id){
   //   return this.http.get(this.orderUrl+id);

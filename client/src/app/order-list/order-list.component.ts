@@ -67,8 +67,13 @@ export class OrderListComponent implements OnInit {
     this.orders.filter = filterValue.trim().toLowerCase();
   }
 
-  done(id:any){
+  done(order:Order){
+    this.orderService.update(order)
+  }
 
+  update(order:Order): void{
+    this.orderService.update(order)
+      .subscribe(()=>this.order="Order updated successfully!");
   }
   // a
   // applyFilter(filterValue: string) {

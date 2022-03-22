@@ -43,9 +43,11 @@ public class OrderService {
         return order;
     }
 
-    public void updateOrder(long orderId) throws OrderNotFoundException{
-      Order order =  orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
-      orderRepository.save(order);
+    public void updateOrder(Order order) throws OrderNotFoundException{
+      Order existingOrder =  orderRepository.findById(order.getId()).orElseThrow(OrderNotFoundException::new);
+      existingOrder.setStatus(order.getStatus());
+      existingOrder.setAmount(order.getAmount());
+      orderRepository.save(existingOrder);
     }
 
     public List<Order> findAllOrders(){

@@ -48,7 +48,9 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
     })
 
   }
-
+  done(order:Order){
+    this.orderService.update(order)
+  }
 
   gotoList() {
     // const orderId =  this.order ? this.order.id : null;
@@ -65,8 +67,9 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  update(order: any, href: any) {
-
+  update(order:Order): void{
+    this.orderService.update(order)
+      .subscribe(()=>this.order="Order updated successfully!");
   }
 
   remove(href: any) {

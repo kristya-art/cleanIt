@@ -91,7 +91,7 @@
 
   <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
     <mat-button-toggle value="red" [routerLink]="['/order-detail',order.id]">edit</mat-button-toggle>
-    <mat-button-toggle value="green" (click)="done(order.id)">	<mat-icon>done</mat-icon>done</mat-button-toggle>
+    <mat-button-toggle value="green" (click)="done(order)">	<mat-icon>done</mat-icon>done</mat-button-toggle>
     <mat-button-toggle value="blue">X</mat-button-toggle>
   </mat-button-toggle-group>
       </td>

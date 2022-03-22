@@ -35,7 +35,7 @@ public class OrderController {
     @PutMapping("{id}")
     public void updateOrder(@PathVariable long id,@RequestBody Order order)
     throws OrderNotFoundException{
-        orderService.updateOrder(order.getId());
+        orderService.updateOrder(order);
     }
 
 

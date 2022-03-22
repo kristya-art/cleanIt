@@ -3,15 +3,11 @@ import {Customer} from "./customer";
 
 export class Order{
   constructor(
-    id : number,
+  public  id : string,
     date: Date,
     amount : number,
     status : string,
     notes: string,
-  //  customer : any,
-   // address: Address,
-    //creditCard: CreditCard,
-    // items : [] | OrderItem
     items:{}
 ){}
 
