@@ -6,53 +6,76 @@
 
   <form #orderForm="ngForm" (ngSubmit)="save(orderForm.value)">
 <!--    <mat-card-title>{{order.id ? 'Edit' : 'Add'}}</mat-card-title>-->
-
     <mat-card-content>
 
       <input type = "hidden" name="href" [(ngModel)]="order.id"/>
 <mat-form-field>
+  <mat-card-subtitle>title</mat-card-subtitle>
   <mat-list>
 
-    <h3 matSubheader></h3>
-    <h4 matLine>item | quantity | price</h4>
+<!--    <h4 matLine>item </h4>-->
     <mat-list-item *ngFor="let item of order.items, let order">
-      <!--    <mat-icon mat-list-icon>folder</mat-icon>-->
-
-      <h4 matLine>{{item.product.title}} |{{item.quantity}} | {{item.product.price}} fr</h4>
+      <h4 matLine>{{item.product.title}}  </h4>
       <!--    <p matLine class="demo-2"> {{item.quantity}}  </p>-->
       <!--    <p matLine class="demo-2">{{item.product.price}} fr</p>-->
     </mat-list-item>
     <mat-divider></mat-divider>
-    <h4 matLine class="demo2"> total {{order.amount}}fr</h4>
+<!--    <h4 matLine class="demo2"> total {{order.amount}}fr</h4>-->
     <mat-divider></mat-divider>
-
-    <mat-list-item *ngFor="let order">
-      <mat-icon matListIcon>quantity</mat-icon>
-      <h4 matLine>{{order.product.quantity}}</h4>
-      <p matLine class="demo-2"> {{order.product.quantity}} </p>
-    </mat-list-item>
   </mat-list>
 </mat-form-field>
-      <mat-form-field  class="orderDetail" appearance="fill">
-        <mat-card-subtitle class="mat-header-cell">date</mat-card-subtitle>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="order.date"
-         required name="date" />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field class="orderDetail">
-        <mat-card-subtitle>order total</mat-card-subtitle>
-        <input matInput placeholder="order amount"  [(ngModel)]="order.amount"
-               required name="amount" />
-      </mat-form-field>
 
 
-      <mat-form-field class="orderDetail">
-        <mat-card-subtitle>order status</mat-card-subtitle>
-        <input matInput placeholder="order status"  [(ngModel)]="order.status"
-               required name="status" />
+      <mat-form-field>
+        <mat-card-subtitle>quantity</mat-card-subtitle>
+        <mat-list>
+
+          <mat-list-item *ngFor="let item of order.items, let order">
+            <h4 matLine>{{item.quantity}} pc. </h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+<!--          <h4 matLine class="demo2"> total {{order.amount}}fr</h4>-->
+          <mat-divider></mat-divider>
+        </mat-list>
       </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-card-subtitle>price</mat-card-subtitle>
+        <mat-list>
+          <mat-list-item *ngFor="let item of order.items, let order">
+            <h4 matLine>{{item.product.price}} fr </h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <h4 matLine class="demo2"> total {{order.amount}}fr</h4>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </mat-form-field>
+
+
+<!--    <mat-list-item *ngFor="let order">-->
+<!--      <mat-icon matListIcon>quantity</mat-icon>-->
+<!--      <h4 matLine>{{order.product.quantity}}</h4>-->
+<!--      <p matLine class="demo-2"> {{order.product.quantity}} </p>-->
+<!--    </mat-list-item>-->
+<!--  </mat-list>-->
+<!--</mat-form-field>-->
+<!--      <mat-form-field  class="orderDetail" appearance="fill">-->
+<!--        <mat-card-subtitle class="mat-header-cell">date</mat-card-subtitle>-->
+<!--        <input matInput [matDatepicker]="picker" [(ngModel)]="order.date"-->
+<!--         required name="date" />-->
+<!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+<!--      </mat-form-field>-->
+
+
+
+
+<!--      <mat-form-field class="orderDetail">-->
+<!--        <mat-card-subtitle>order status</mat-card-subtitle>-->
+<!--        <input matInput placeholder="order status"  [(ngModel)]="order.status"-->
+<!--               required name="status" />-->
+<!--      </mat-form-field>-->
 
 <!--      <mat-form-field class="orderDetail">-->
 <!--        <mat-card-subtitle>customer id</mat-card-subtitle>-->
@@ -66,16 +89,7 @@
                 *ngIf="order.id" type="button">Send email</button>
       </mat-form-field>
 
-      <table >
-        <tr ng-repeat="let item of order.items">
-          <td>{{ order.id }}</td>
-          <td *ngFor="let item of order.items">{{item.product.title}}</td>
 
-
-
-
-        </tr>
-      </table>
     </mat-card-content>
 
     <mat-card-actions>
