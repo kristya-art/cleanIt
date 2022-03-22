@@ -36,14 +36,14 @@
 
   .mat-column-id {
     flex: 9em;
-    min-width: 0.5em;
+    /*min-width: 0.5em;*/
     /*width: 8px;*/
-    border-right: 1px solid currentColor;
+    /*border-right: 1px solid currentColor;*/
     padding-right: 24px;
     text-align: center;
   }
   .mat-column-customerId {
-    width: 8px;
+    /*width: 8px;*/
     /*border-right: 1px solid currentColor;*/
     /*border-left: 1px solid currentColor;*/
     padding-right: 24px;

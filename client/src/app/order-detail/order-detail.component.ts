@@ -48,7 +48,7 @@ export class OrderDetailComponent implements OnInit, OnDestroy {
     })
 
   }
-  done(order:Order){
+  done(order:Order): void{
     this.orderService.update(order)
   }
 
