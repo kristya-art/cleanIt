@@ -7,6 +7,7 @@ import {Customer} from "../customer";
 import {MatTableDataSource} from "@angular/material/table";
 import {CustomerService} from "../services/customer.service";
 import {ProductInfo} from "../productInfo";
+import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
 
 
 @Component({
@@ -19,9 +20,7 @@ import {ProductInfo} from "../productInfo";
 export class OrderListComponent implements OnInit {
   columnToDisplay : string[] = ['id','date','description','status','customerId','customerName','action','notes']
 
-  // displayedColumns = ['id','date','status','action']
-  // dataSource = new MatTableDataSource();
-
+  private subjectKyeUp = new Subject<any>();
   order:any;
   orders:any;
   item: any;
@@ -34,7 +33,7 @@ export class OrderListComponent implements OnInit {
   customers : [] | any;
 
   id:any
-
+  orders$:any
 
   constructor(private orderService: OrderService, private router: Router,private customerService : CustomerService) { }
 
@@ -43,12 +42,22 @@ export class OrderListComponent implements OnInit {
       this.orders=data;
       this.customers = this.customerService.getAll();
 
+      this.subjectKyeUp.pipe(debounceTime(1000),
+        distinctUntilChanged()).subscribe((d)=>{
+       this.getOrders(d)});
 
    //  this.dataSource.paginator = this.paginator;
      // this.dataSource=data;
     })
   }
 
+getOrders(value:string) {
+    this.orders$ = this.orderService.getOrders(value)
+    .subscribe((d)=>
+    {
+      console.log(d);
+    });
+}
   reloadData(){
     this.orders = this.orderService.getAll();
   }
@@ -60,6 +69,12 @@ export class OrderListComponent implements OnInit {
     // const orderId =  this.order ? this.order.id : null;
     // this.router.navigate(['/order-detail', {id: orderId}]);
     this.router.navigate(['/order-detail', {id}]);
+  }
+
+  onSearch($event:any){
+    const value=$event.target.value;
+    this.subjectKyeUp.next(value);
+
   }
 
   applyFilter(event: Event) {

@@ -1,7 +1,10 @@
 package org.cleaningstore.order.controller;
 
+import com.sun.istack.NotNull;
 import org.cleaningstore.EmailSenderService;
+import org.cleaningstore.customer.service.CustomerNotFoundException;
 import org.cleaningstore.order.model.Order;
+import org.cleaningstore.order.model.OrderInfo;
 import org.cleaningstore.order.model.OrderStatus;
 import org.cleaningstore.order.service.OrderNotFoundException;
 import org.cleaningstore.order.service.OrderService;
@@ -38,6 +41,10 @@ public class OrderController {
         orderService.updateOrder(order);
     }
 
-
+    @GetMapping
+    public List<OrderInfo> searchOrders(@RequestParam @NotNull long customerId)
+            throws CustomerNotFoundException {
+        return orderService.searchOrders2(customerId);
+    }
 
 }

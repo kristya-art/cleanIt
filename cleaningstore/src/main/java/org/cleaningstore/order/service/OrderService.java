@@ -66,5 +66,9 @@ public class OrderService {
         return orderRepository.findByCustomerIdAndDateBetween(customerId,startDate,endDate);
 
     }
+    public List<OrderInfo> searchOrders2(long customerId) throws CustomerNotFoundException{
+        Customer customer1 = customerService.findCustomer(customerId);
+        return orderRepository.findByCustomerId(customerId);
+    }
 }
 
