@@ -41,7 +41,7 @@ public class OrderController {
         orderService.updateOrder(order);
     }
 
-    @GetMapping
+    @GetMapping("/search")
     public List<OrderInfo> searchOrders(@RequestParam @NotNull long customerId)
             throws CustomerNotFoundException {
         return orderService.searchOrders2(customerId);
