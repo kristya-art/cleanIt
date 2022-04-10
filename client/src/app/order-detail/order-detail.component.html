@@ -11,8 +11,7 @@
     <mat-card-content>
       <mat-form-field class="orderDetail">
         <mat-card-subtitle>order status</mat-card-subtitle>
-        <input matInput placeholder="order status"  [(ngModel)]="order.status" (keyup.enter)="update(order)"
-               required name="status" />
+        <input matInput placeholder="order status"  [(ngModel)]="order.status" required name="status" />
       </mat-form-field>
 
       <input type = "hidden" name="href" [(ngModel)]="order.id"/>

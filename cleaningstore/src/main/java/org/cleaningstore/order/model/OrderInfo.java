@@ -12,4 +12,6 @@ public interface OrderInfo {
     BigDecimal getAmount();
 
     OrderStatus getStatus();
+
+
 }
