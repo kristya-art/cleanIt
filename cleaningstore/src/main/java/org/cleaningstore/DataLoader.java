@@ -60,19 +60,27 @@ public class DataLoader implements ApplicationRunner {
         OrderItem oi2 = new OrderItem(new ProductInfo("duvet", Material.COTTON,new BigDecimal(10.0)),2);
         OrderItem oi3 = new OrderItem(new ProductInfo("blouse", Material.LINE,new BigDecimal(6.5)),3);
         OrderItem oi4 = new OrderItem(new ProductInfo("dress", Material.COTTON,new BigDecimal(7.0)),2);
+        OrderItem oi5 = new OrderItem(new ProductInfo("hat", Material.LINE,new BigDecimal(3.5)),3);
+        OrderItem oi6 = new OrderItem(new ProductInfo("camicia", Material.COTTON,new BigDecimal(9.0)),2);
+
 
         List<OrderItem> orderItems12 = new ArrayList<>();
         List<OrderItem> orderItems34 = new ArrayList<>();
+        List<OrderItem> orderItems56 = new ArrayList<>();
         orderItems12.add(oi1);
         orderItems12.add(oi2);
 
         orderItems34.add(oi3);
         orderItems34.add(oi4);
 
+        orderItems56.add(oi5);
+        orderItems56.add(oi6);
 
         Order order1 = orderService.placeOrder(customer1.getId(),orderItems12);
 
         Order order2 = orderService.placeOrder(customer2.getId(),orderItems34);
+
+        Order order3 = orderService.placeOrder(customer1.getId(), orderItems56);
 
       //   customerController.sendEmail(customer2.getId());
 

@@ -1,0 +1,10 @@
+<p>product-details works!</p>
+
+<div>
+ <p *ngIf="order">
+   {{order.id}}
+   <p>
+   {{order.amount}}
+ </p>
+  <button type="button" (click)="addToCart(order)">Buy</button>
+</div>

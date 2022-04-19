@@ -23,13 +23,21 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent,
     OrderDetailComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    ProductListComponent,
+    ProductAlertsComponent,
+    ProductDetailsComponent,
+    CartComponent,
   ],
     imports: [
         BrowserModule,
@@ -51,7 +59,12 @@ import {MatGridListModule} from "@angular/material/grid-list";
         MatNativeDateModule,
         MatPaginatorModule,
         MatIconModule,
-        MatGridListModule
+        MatGridListModule,
+        RouterModule.forRoot([
+          {path: 'products', component: ProductListComponent},
+          {path: 'products/:productId', component: ProductDetailsComponent},
+          {path: 'cart', component: CartComponent}
+        ])
 
 
     ],

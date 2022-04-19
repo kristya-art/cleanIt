@@ -4,4 +4,4 @@ EXPOSE 8080
 
 ADD target/cleaningstore.jar cleaningstore.jar
 
-ENTRYPOINT ["java","jar","docker-demo.jar"]
+ENTRYPOINT ["java","jar","cleaningstore.jar"]

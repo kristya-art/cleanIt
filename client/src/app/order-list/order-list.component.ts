@@ -7,7 +7,7 @@ import {Customer} from "../customer";
 import {MatTableDataSource} from "@angular/material/table";
 import {CustomerService} from "../services/customer.service";
 import {ProductInfo} from "../productInfo";
-import {debounceTime, distinctUntilChanged, Subject} from "rxjs";
+import {debounceTime, distinctUntilChanged, filter, Subject} from "rxjs";
 
 
 @Component({
@@ -23,7 +23,7 @@ export class OrderListComponent implements OnInit {
   private subjectKyeUp = new Subject<any>();
   order:any;
   orders:any;
-  item: any;
+  item:any;
   product: ProductInfo | any;
 
 
@@ -44,7 +44,7 @@ export class OrderListComponent implements OnInit {
 
       this.subjectKyeUp.pipe(debounceTime(1000),
         distinctUntilChanged()).subscribe((d)=>{
-       this.getOrders(d)});
+        this.getOrders(d)});
 
    //  this.dataSource.paginator = this.paginator;
      // this.dataSource=data;
@@ -56,7 +56,11 @@ getOrders(value:string) {
     .subscribe((d)=>
     {
       console.log(d);
-    });
+      // this.orders=d;
+
+      });
+
+
 }
   reloadData(){
     this.orders = this.orderService.getAll();

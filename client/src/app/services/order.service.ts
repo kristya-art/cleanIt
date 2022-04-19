@@ -27,13 +27,21 @@ export class OrderService {
   update(order:Order) : Observable<Order> {
     return this.http.put<Order>(this.orderUrl+'/'+order.id, order);
   }
-getOrders(value:string):Observable<any>{
-   return this.http.get(`http://localhost:8080/orders/search?customerId=${value}`)
-     .pipe(
-       map((d:any) => {
-       return d;
-       } ));
-}
+// getOrders(value:string):Observable<any>{
+//    return this.http.get(`http://localhost:8080/orders/search?customerId=${value}`,{responseType:'json'});
+//      // .pipe(
+//      //   map((d:any) => {
+//      //   return d;
+//      //   } ));
+//
+// }
+  getOrders(value:string):Observable<any>{
+    return this.http.get(`http://localhost:8080/orders/search?customerId=${value}`)
+      .pipe(
+        map((d:any) => {
+          return d;
+        } ));
+  }
 
 
 
